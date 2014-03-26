@@ -44,7 +44,7 @@
 
 // On win32, we need to ensure we use stdcall with all compilers.
 #if defined(_WIN32) && !defined(_WIN64)
-#	define FFMS_CC __stdcall
+#	define FFMS_CC
 #else
 #	define FFMS_CC
 #endif
