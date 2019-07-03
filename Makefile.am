@@ -54,3 +54,5 @@ include_HEADERS = $(top_srcdir)/include/ffms.h $(top_srcdir)/include/ffmscompat.
 bin_PROGRAMS = src/index/ffmsindex
 src_index_ffmsindex_SOURCES = src/index/ffmsindex.cpp
 src_index_ffmsindex_LDADD = src/core/libffms2.la
+src_index_ffmsindex_LDFLAGS = @src_index_ffmsindex_LDFLAGS@
+
