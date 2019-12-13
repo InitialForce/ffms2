@@ -141,6 +141,9 @@ if test "$enable_shared" = yes; then
 else
     bsymbolic=no
 fi
+if echo "$host" | $GREP "mingw" >/dev/null 2>&1; then
+    src_index_core_LDFLAGS="$src_core_ffmsindex_LDFLAGS -municode"
+fi
 AC_SUBST([src_core_libffms2_la_LDFLAGS])
 
 CFLAGS="$_CFLAGS"
