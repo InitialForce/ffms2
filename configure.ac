@@ -20,7 +20,7 @@ AC_ARG_ENABLE([debug],
 AC_MSG_RESULT([$enable_debug])
 
 if test "$enable_debug" = yes; then
-    OPT_FLAGS="-O0 -g"
+    OPT_FLAGS="-O0 -g3 -fno-inline -fno-omit-frame-pointer -fvar-tracking -fvar-tracking-assignments"
 else
     OPT_FLAGS="-O3"
 fi
