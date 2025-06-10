@@ -107,19 +107,19 @@ indexer.o: $(USER_DIR)/test/indexer.cpp $(USER_DIR)/include/ffms.h $(GTEST_HEADE
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/test/indexer.cpp
 
 indexer: indexer.o tests.o gtest_main.a ../src/core/libffms2.la
-	../libtool --tag=CXX --mode=link $(CXX) $(CPPFLAGS) $(CXXFLAGS) -o indexer indexer.o tests.o gtest_main.a -lavutil ../src/core/libffms2.la
+	../libtool --tag=CXX --mode=link $(CXX) $(CPPFLAGS) $(CXXFLAGS) -o indexer indexer.o tests.o gtest_main.a -lavutil-if ../src/core/libffms2.la
 
 indexer-run:
 	@./indexer
 
 hdr: hdr.o gtest_main.a ../src/core/libffms2.la
-	../libtool --tag=CXX --mode=link $(CXX) $(CPPFLAGS) $(CXXFLAGS) -o hdr hdr.o gtest_main.a -lavutil ../src/core/libffms2.la
+	../libtool --tag=CXX --mode=link $(CXX) $(CPPFLAGS) $(CXXFLAGS) -o hdr hdr.o gtest_main.a -lavutil-if ../src/core/libffms2.la
 
 hdr-run:
 	@./hdr
 
 display_matrix: display_matrix.o gtest_main.a ../src/core/libffms2.la
-	../libtool --tag=CXX --mode=link $(CXX) $(CPPFLAGS) $(CXXFLAGS) -o display_matrix display_matrix.o gtest_main.a -lavutil ../src/core/libffms2.la
+	../libtool --tag=CXX --mode=link $(CXX) $(CPPFLAGS) $(CXXFLAGS) -o display_matrix display_matrix.o gtest_main.a -lavutil-if ../src/core/libffms2.la
 
 display_matrix-run:
 	@./display_matrix
